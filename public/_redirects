@@ -1,0 +1,7 @@
+/*    /index.html   200
+
+# Handle secure download routes
+/secure-download/*    /index.html   200
+
+# Handle all other routes
+/*    /index.html   200
