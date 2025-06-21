@@ -2,7 +2,7 @@
 // Brevo (formerly Sendinblue) configuration for transactional emails with attachments
 
 // Configuration
-const CONFIG = {
+export const CONFIG = {
   brevo: {
     apiUrl: 'https://api.brevo.com/v3/smtp/email',
     // You'll need to set this in your environment variables
@@ -72,7 +72,7 @@ interface SecureDocumentDeliveryData {
   maxDownloads: number;
 }
 
-interface BrevoEmailData {
+export interface BrevoEmailData {
   sender: {
     name: string;
     email: string;
@@ -115,7 +115,7 @@ const formatFileSize = (bytes: number): string => {
 };
 
 // Brevo API Service
-const sendBrevoEmail = async (emailData: BrevoEmailData): Promise<void> => {
+export const sendBrevoEmail = async (emailData: BrevoEmailData): Promise<void> => {
   if (!CONFIG.brevo.apiKey) {
     console.warn('Brevo API key is not configured. Please check your environment variables.');
     throw new Error('Brevo not configured - Please add VITE_BREVO_API_KEY to your environment');
